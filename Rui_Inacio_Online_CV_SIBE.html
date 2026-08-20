@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rui Inácio · Technical Product Marketing &amp; Technical Writing — Online CV</title>
+<meta name="description" content="Rui Inácio — Technical Product Marketing, Technical Product Marketing and Technical Writing for B2B industrial and engineering-led markets. Engineer who translates complex, technical products into clear commercial value.">
+<meta name="author" content="Rui Inácio">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Rui Inácio · Technical Product Marketing &amp; Technical Writing">
+<meta property="og:description" content="Engineer who markets: 15+ years across industrial operations, energy and B2B product marketing. Translates complex technical products into positioning, documentation and commercial value that engineering teams and distributors trust.">
+<meta name="robots" content="noindex">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --purple:#7500B6; --purple-deep:#54008a; --purple-dark:#31004f;
+    --purple-soft:#f3e7fb; --purple-soft-2:#ece0f7;
+    --pink:#FF355D; --pink-deep:#d6123f; --pink-chip:#a80f36; --pink-soft:#ffe3ea;
+    --ink:#1c1526; --slate:#463c53; --muted:#635971;
+    --line:#e9e0f4; --paper:#faf7fd; --bg:#ffffff; --outer-bg:#f1ecf7;
+    --shadow:0 10px 34px rgba(84,0,138,.14);
+  }
+  html[data-theme="dark"]{
+    --ink:#f4eefb; --slate:#d8cbe8; --muted:#af9fc7;
+    --line:#3c2a54; --paper:#20132e; --bg:#170d22; --outer-bg:#0d0716;
+    --purple-deep:#c79bef; --pink-deep:#ff6f8f;
+    --shadow:0 10px 34px rgba(0,0,0,.55);
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--slate); background:var(--outer-bg); line-height:1.6; -webkit-font-smoothing:antialiased;
+    transition:background .2s ease;
+  }
+  h1,h2,h3,.brand-font{font-family:'Space Grotesk','Inter',-apple-system,sans-serif}
+  a{color:inherit}
+  .page{max-width:1040px; margin:24px auto; background:var(--bg); box-shadow:var(--shadow); border-radius:8px; overflow:hidden; transition:background .2s ease}
+
+  /* ---------- Header ---------- */
+  header{
+    position:relative; overflow:hidden;
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0px, rgba(255,255,255,.05) 1px, transparent 1px, transparent 34px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0px, rgba(255,255,255,.05) 1px, transparent 1px, transparent 34px),
+      linear-gradient(135deg,#54008a 0%,#7500B6 55%,#31004f 100%);
+    color:#fff; padding:40px 44px 30px; border-bottom:4px solid var(--pink);
+  }
+  .head-top{display:flex; align-items:flex-start; gap:20px; position:relative; z-index:1}
+  .monogram{
+    flex:none; width:56px; height:56px; border:1.5px solid rgba(255,255,255,.55); border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',Georgia,serif; font-weight:700; font-size:20px; letter-spacing:.5px;
+    color:#fff; background:rgba(255,53,93,.22);
+  }
+  .head-id{flex:1; min-width:0}
+  header h1{font-size:34px; font-weight:700; letter-spacing:.2px; line-height:1.1}
+  .tagline{margin-top:7px; font-size:15px; color:#f0dcf9; font-weight:500}
+  .role{margin-top:16px; font-size:12.5px; font-weight:600; color:#f3e6fb; letter-spacing:.3px}
+  .role .sep{color:var(--pink); margin:0 7px; font-weight:700}
+  .contact{margin-top:18px; display:flex; flex-wrap:wrap; gap:9px 22px; font-size:13px; position:relative; z-index:1}
+  .contact a{color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.5)}
+  .contact a:hover{border-bottom-color:var(--pink)}
+  .contact span{color:#e9d9f4}
+
+  /* ---------- Header controls (language / theme / print) ---------- */
+  .controls{flex:none; display:flex; flex-direction:column; align-items:flex-end; gap:8px; position:relative; z-index:1}
+  .ctlgroup{display:flex; gap:4px; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.35); border-radius:20px; padding:3px}
+  .ctlgroup button{
+    font:inherit; font-size:11.5px; font-weight:700; letter-spacing:.4px;
+    color:#f0dcf9; background:transparent; border:0; border-radius:16px;
+    padding:5px 11px; cursor:pointer; transition:background .16s ease, color .16s ease;
+  }
+  .ctlgroup button:hover{background:rgba(255,255,255,.18)}
+  .ctlgroup button[aria-pressed="true"]{background:var(--pink); color:#fff}
+  .iconbtn{
+    font:inherit; font-size:11.5px; font-weight:700; letter-spacing:.4px; color:#f0dcf9;
+    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.35); border-radius:20px;
+    padding:6px 13px; cursor:pointer; display:inline-flex; align-items:center; gap:6px;
+    transition:background .16s ease;
+  }
+  .iconbtn:hover{background:rgba(255,255,255,.18)}
+  .iconbtn svg{width:12px; height:12px; fill:currentColor}
+
+  /* ---------- Layout ---------- */
+  .body{display:grid; grid-template-columns:320px 1fr}
+  aside{background:var(--paper); padding:30px 26px; border-right:1px solid var(--line); transition:background .2s ease, border-color .2s ease}
+  main{padding:30px 36px}
+  aside section, main section{margin-bottom:26px; scroll-margin-top:52px}
+  h2{
+    font-size:11.5px; text-transform:uppercase; letter-spacing:1.6px; color:var(--purple-deep);
+    font-weight:700; margin:0 0 13px; padding-bottom:7px; border-bottom:2px solid var(--pink);
+  }
+
+  /* ---------- Profile ---------- */
+  .summary{font-size:13.8px; color:var(--slate)}
+  .summary p{margin-bottom:11px}
+  .summary b{color:var(--ink); font-weight:700}
+
+  /* ---------- Key strengths ---------- */
+  .wins{display:grid; grid-template-columns:1fr; gap:9px}
+  .win{background:var(--bg); border:1px solid var(--line); border-left:3px solid var(--pink); border-radius:6px; padding:9px 11px}
+  .win b{display:block; color:var(--purple-deep); font-size:12px; font-weight:700; letter-spacing:.1px; margin-bottom:2px; font-family:'Space Grotesk',sans-serif}
+  .win span{font-size:11.5px; color:var(--muted); line-height:1.42}
+
+  /* ---------- Experience ---------- */
+  .job{margin-bottom:20px; scroll-margin-top:52px}
+  .job .top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:2px 12px; align-items:baseline}
+  .job .title{font-size:15px; font-weight:700; color:var(--ink); font-family:'Space Grotesk',sans-serif}
+  .job .co{font-weight:600; color:var(--pink-deep)}
+  .job .meta{font-size:11.5px; color:var(--muted); white-space:nowrap; font-weight:600}
+  .job .desc{font-size:12.5px; color:var(--muted); font-style:italic; margin:4px 0 8px}
+  .job ul{list-style:none; margin:0}
+  .job li{position:relative; padding-left:17px; font-size:13.3px; margin-bottom:6px; color:var(--slate)}
+  .job li::before{content:""; position:absolute; left:2px; top:8px; width:5px; height:5px; background:var(--purple); border-radius:50%}
+  .job li b{color:var(--ink); font-weight:700}
+
+  /* ---------- Skills ---------- */
+  .skillgroup{margin-bottom:16px}
+  .skillgroup h3{font-size:11.5px; color:var(--purple-deep); font-weight:700; margin-bottom:7px; letter-spacing:.2px; font-family:'Space Grotesk',sans-serif}
+  .chips{display:flex; flex-wrap:wrap; gap:6px}
+  .chips span{background:var(--purple-soft); color:var(--purple-dark); font-size:11.3px; font-weight:500; padding:4px 10px; border-radius:20px}
+  .skillgroup.primary .chips span{background:var(--pink-soft); color:var(--pink-chip)}
+
+  /* ---------- Sidebar lists ---------- */
+  .edu{font-size:12.5px; margin-bottom:12px; color:var(--slate)}
+  .edu b{display:block; color:var(--ink); font-family:'Space Grotesk',sans-serif; font-size:13px}
+  .edu span{display:block; color:var(--muted); font-size:11.5px; margin-top:1px}
+  .lang{display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:6px}
+  .lang b{color:var(--ink); font-weight:600}
+  .lang span{color:var(--muted)}
+  ul.plain{list-style:none}
+  ul.plain li{position:relative; padding-left:15px; font-size:12.3px; margin-bottom:7px; color:var(--slate); line-height:1.42}
+  ul.plain li::before{content:""; position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--pink); border-radius:50%}
+
+  .beyond{font-size:11.8px; color:var(--muted); line-height:1.6}
+
+  footer{padding:16px 44px; background:var(--purple-dark); border-top:3px solid var(--pink); font-size:11.3px; color:#e4d3f2; text-align:center; letter-spacing:.2px}
+  footer a{color:#fff}
+
+  @media (max-width:860px){
+    .head-top{flex-wrap:wrap}
+    .controls{order:-1; width:100%; flex-direction:row; justify-content:flex-end; align-items:center}
+  }
+  @media (max-width:760px){
+    .body{grid-template-columns:1fr}
+    aside{border-right:none; border-bottom:1px solid var(--line)}
+    header{padding:30px 22px 24px}
+    main{padding:22px 22px}
+    header h1{font-size:27px}
+  }
+  @media print{
+    html[data-theme]{
+      --ink:#1c1526; --slate:#463c53; --muted:#635971; --line:#e9e0f4; --paper:#faf7fd;
+      --bg:#ffffff; --outer-bg:#ffffff; --purple-deep:#54008a; --pink-deep:#d6123f;
+    }
+    body{background:#fff}
+    .page{box-shadow:none; margin:0; max-width:none; border-radius:0}
+    .controls{display:none !important}
+    .body{display:flex; flex-direction:column}
+    main{order:1; padding:18px 34px}
+    aside{order:2; padding:18px 34px; border-right:none; border-top:1px solid var(--line)}
+    section{break-inside:avoid}
+    h2{break-after:avoid}
+    header,aside,.win,.chips span,.monogram,footer{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .job{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Rui Inácio",
+  "jobTitle":"Technical Product Marketing & Technical Writing",
+  "email":"mailto:rui.e.inacio@gmail.com",
+  "telephone":"+351965884572",
+  "address":{"@type":"PostalAddress","addressLocality":"Covilhã","addressCountry":"PT"},
+  "sameAs":["https://linkedin.com/in/ruinacio"],
+  "alumniOf":"Universidade da Beira Interior",
+  "description":"Engineer and technical product marketer who turns complex technical products into clear commercial value for B2B, industrial and engineering-led markets."
+}
+</script>
+
+<div class="page">
+  <header>
+    <div class="head-top">
+      <div class="monogram">RI</div>
+      <div class="head-id">
+        <h1>Rui Inácio</h1>
+        <div class="tagline" id="tagline">Where engineering depth meets commercial clarity</div>
+        <div class="role" id="roleline">Product Marketing <span class="sep">|</span> Technical Product Marketing <span class="sep">|</span> Technical Writing &amp; Documentation <span class="sep">|</span> B2B Industrial, Engineering &amp; Cleantech</div>
+      </div>
+      <div class="controls">
+        <div class="ctlgroup" id="langs" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+          <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+        </div>
+        <button class="iconbtn" id="themeBtn" type="button" aria-pressed="false" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24"><path d="M21.53 15.93A9 9 0 018.07 2.47a9.5 9.5 0 1013.46 13.46z"></path></svg><span id="themeLabel">Dark</span></button>
+        <button class="iconbtn" id="printBtn" type="button" aria-label="Print"><svg viewBox="0 0 24 24"><path d="M7 3h10v4H7V3zm12 6H5a3 3 0 00-3 3v5h4v4h12v-4h4v-5a3 3 0 00-3-3zm-3 10H8v-5h8v5z"></path></svg><span id="printLabel">Print</span></button>
+      </div>
+    </div>
+    <div class="contact">
+      <span>📍 Covilhã, Portugal</span>
+      <span>📞 +351 965 884 572</span>
+      <a href="mailto:rui.e.inacio@gmail.com">✉ rui.e.inacio@gmail.com</a>
+      <a href="https://linkedin.com/in/ruinacio" target="_blank" rel="noopener">linkedin.com/in/ruinacio</a>
+    </div>
+  </header>
+
+  <div class="body">
+    <aside>
+      <section id="strengths">
+        <h2 id="h-strengths">Key Strengths</h2>
+        <div class="wins" id="wins"></div>
+      </section>
+
+      <section id="education">
+        <h2 id="h-edu">Education</h2>
+        <div id="edu"></div>
+      </section>
+
+      <section id="certifications">
+        <h2 id="h-certs">Certifications</h2>
+        <ul class="plain" id="certs"></ul>
+      </section>
+
+      <section id="languages">
+        <h2 id="h-langs">Languages</h2>
+        <div id="langlist"></div>
+      </section>
+
+      <section id="beyond" style="margin-bottom:0">
+        <h2 id="h-beyond">Beyond Work</h2>
+        <div class="beyond" id="beyondtext"></div>
+      </section>
+    </aside>
+
+    <main>
+      <section id="profile">
+        <h2 id="h-profile">Profile</h2>
+        <div class="summary" id="profile-body"></div>
+      </section>
+
+      <section id="experience">
+        <h2 id="h-exp">Professional Experience</h2>
+        <div id="jobs"></div>
+      </section>
+
+      <section id="skills">
+        <h2 id="h-skills">Core Skills</h2>
+        <div id="skills-body"></div>
+      </section>
+    </main>
+  </div>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const CV = {};
+
+CV.en = {
+  docTitle:"Rui Inácio · Technical Product Marketing & Technical Writing — Online CV",
+  tagline:"Where engineering depth meets commercial clarity",
+  role:"Product Marketing <span class='sep'>|</span> Technical Product Marketing <span class='sep'>|</span> Technical Writing &amp; Documentation <span class='sep'>|</span> B2B Industrial, Engineering &amp; Cleantech",
+  ui:{dark:"Dark", light:"Light", print:"Print"},
+  h:{strengths:"Key Strengths", edu:"Education", certs:"Certifications", langs:"Languages", beyond:"Beyond Work", profile:"Profile", exp:"Professional Experience", skills:"Core Skills"},
+  wins:[
+    ["Engineer who markets","Bridges engineering and commercial as a technical product marketer"],
+    ["Technical-to-commercial translator","Turns engineering specifications into positioning that technical teams and distributors trust"],
+    ["Docs from the ground up","Built plant manuals, SOPs and control charts as an early hire"],
+    ["2x product-dev speed","Applied factory process methods to the product development process at Lumatek"],
+    ["EN / ES / DE catalogues","Full LED and controller portfolio, technical brief to print in ~3 days"],
+    ["Automation & PLCs","Hands-on with Omron and Siemens systems in continuous production environments"],
+    ["SolidWorks & Solid Edge trained","SolidWorks Mechanical Design – Associate certified, with academic CAD modelling experience in SolidWorks and Solid Edge"],
+    ["16 MW plant, zero lost-time","8 years of 24/7 shift leadership at ~350 t/day, sustaining a zero lost-time safety record"],
+    ["Data dashboards","Python, SQL and Power BI applied to decisions"],
+    ["SEO Specialization","UC Davis; plus Google digital marketing and technical writing training"],
+    ["Multilingual","Portuguese, English, Spanish"]
+  ],
+  profile:[
+    "Engineer and technical product marketer who turns complex, technically demanding products into clear commercial value for technical B2B buyers. 15+ years across industrial operations, energy and product marketing, spanning solar PV, food manufacturing, biomass power generation and horticultural lighting. At Lumatek, converts engineering specifications for a full LED and controller portfolio into <b>datasheets, catalogues and positioning</b> that distributors and internal teams trust, in English, Spanish and German.",
+    "Engineering foundation built on a BSc in Electromechanical Engineering and MSc level Industrial Engineering and Management, grounded in eight years of 24/7 operations leadership, including building technical manuals, SOPs and control charts from the ground up as an early hire, and troubleshooting automation systems built on Omron and Siemens controllers. That fluency with engineering teams and technical documentation is paired with recent formal training in <b>product marketing, technical writing and SEO</b> (UC Davis Specialization), plus working comfort with data (Python, SQL and Power BI) that supports positioning and content decisions grounded in evidence.",
+    "Comfortable as the translator between engineering and commercial: turning specifications, workflows and technical detail into content and positioning that engineers, product teams and distributors trust and act on. Based in Covilhã, Portugal; open to remote or hybrid roles and international collaboration."
+  ],
+  jobs:[
+    {title:"Product Marketing Manager", co:"Lumatek", meta:"Jan 2026 – Present · Remote",
+     desc:"Engineering-led product marketing and technical content for horticultural lighting in international B2B markets.",
+     b:["Co-produced technical and commercial content for the <b>full LED and controller portfolio</b> in the 2026 professional and retail catalogues, structured in <b>English, Spanish and German</b> for hobby and professional growers across Lumatek Europe.",
+        "Acted as a <b>key assistant to product development</b>, applying factory and industrial-process methods to the product development process (PDP) and <b>helping to double its speed</b>.",
+        "Drafted <b>datasheets and manuals</b> for new confidential horticultural lighting products and supported launches with market and competitor analysis and price positioning.",
+        "Turned each catalogue around in <b>about three days</b>, from technical brief to ready-for-print, balancing technical accuracy with clear commercial messaging.",
+        "Served as the <b>technical-to-commercial translator</b>, converting engineering specifications into positioning that gave distributors and internal teams a clearer view of the portfolio and more confident go-to-market decisions.",
+        "Reduced ad-hoc content demands on the engineering team; content produced remains live on the company website."]},
+    {title:"Senior Team Leader, Biomass Power Plant", co:"Magestop", meta:"Oct 2018 – Jan 2026 · Portugal",
+     desc:"Shift leadership at a 16 MW solid-biomass power plant, about 350 t/day, operating 24/7 year-round.",
+     b:["Led a <b>shift team of five</b> operators and technicians and coordinated with <b>around 35 colleagues</b> across maintenance, engineering and technical functions; owned on-shift decisions during incidents and anomalies.",
+        "As one of the first employees, <b>built technical manuals, operating procedures, checklists and control charts from the ground up</b>, enabling teams to monitor the boiler (49 MWt), turbine (17 MW) and production systems and keep costs under control.",
+        "Maintained maximum energy output (16 MW per hour) by improving biomass quality and combustion efficiency and reducing biomass cost per shift.",
+        "Planned and delivered the plant's annual preventive-maintenance shutdown, lasting around 30 days.",
+        "Sustained a <b>zero lost-time accident record across eight years</b> in a reliability-critical environment."]},
+    {title:"Industrial Technician", co:"Frulact", meta:"Dec 2014 – Oct 2018 · Portugal",
+     desc:"Maintenance and continuous improvement in a continuous food-manufacturing operation.",
+     b:["Maintained continuous production lines, steam lines, automation, <b>Omron and Siemens PLCs</b>, sensors, motors and HMI systems, troubleshooting autonomously to keep lines running reliably.",
+        "Documented maintenance thoroughly, <b>reducing troubleshooting time and unplanned downtime</b>, with most tasks completed without external specialists.",
+        "Ensured proper handling and recycling of components, products and liquids in line with <b>ISO 9001, ISO 22000 and ISO 14001</b>."]},
+    {title:"Technical Specialist, Solar PV", co:"Martifer Renewables", meta:"Apr 2008 – Apr 2010 · Belgium &amp; Spain",
+     desc:"Delivery of large-scale photovoltaic projects across international sites.",
+     b:["Delivered <b>around 15 PV projects in Spain and 20+ in Belgium</b>: interpreting electrical and assembly schematics, installing support structures and panels, and wiring panels and inverters through to completion.",
+        "Led and coordinated the on-site team <b>as site manager on three projects</b> in Belgium."]}
+  ],
+  skillGroups:[
+    {title:"Product & Marketing", primary:true, chips:["Technical Product Marketing","Product Positioning","Value Propositions","Catalogues, Datasheets & Manuals","Technical Writing","Sales Enablement","Competitor & Market Analysis","Price Positioning","Digital Marketing","SEO"]},
+    {title:"Engineering & Systems", chips:["Electromechanical Engineering","Mechatronics","SolidWorks","Automation & PLCs (Omron, Siemens)","Technical Schematics & Documentation","Solar PV","Power Generation (Biomass)","Maintenance Strategy","Reliability & Root-Cause Analysis","Safety (Zero LTI)","ISO 9001 / 22000 / 14001"]},
+    {title:"Data, AI & Tools", chips:["Python","SQL","Power BI","Process Automation","SCADA / DCS","WordPress","HubSpot","SEMrush","Adobe Lightroom","ChatGPT","Perplexity","Claude","Asana","Microsoft 365"]}
+  ],
+  edu:[
+    {title:"M.Sc. Industrial Engineering & Management", desc:"Coursework completed; thesis on hold (ML / decision-support focus). Universidade da Beira Interior (2021–2023)"},
+    {title:"B.Sc. Electromechanical Engineering", desc:"Completed part-time while working full-time. Universidade da Beira Interior (2012–2021)"}
+  ],
+  certs:[
+    "SEO Specialization, University of California, Davis (2026)",
+    "Foundations of Digital Marketing &amp; E-commerce, Google (2026)",
+    "Introduction to Technical Writing, Board Infinity (2026)",
+    "SolidWorks Mechanical Design – Associate",
+    "Python (Advanced, Data Cleaning), SQL, Power BI (Data Storytelling), Enterprise Process Automation (2025)",
+    "WordPress; Adobe Lightroom; Linux &amp; Cybersecurity Fundamentals",
+    "In progress: Product Marketing, advanced SEO (AEO, GEO), Technical Writing"
+  ],
+  langs:[{name:"Portuguese", level:"Native"},{name:"English", level:"Professional working (91/100)"},{name:"Spanish", level:"Intermediate (professional)"}],
+  beyond:"President, NEUBI Electromechanical Engineering Students Association (4 yrs) · Vice-President, AJAS Youth Association for Solidarity Action (2 yrs) · Federated university rugby player (6 yrs) · Professional football referee (10 yrs)",
+  foot:"Rui Inácio · Product Marketing &amp; Technical Writing · <a href=\"mailto:rui.e.inacio@gmail.com\">rui.e.inacio@gmail.com</a> · +351 965 884 572 · Updated August 2026"
+};
+
+CV.pt = {
+  docTitle:"Rui Inácio · Marketing Técnico de Produto e Redação Técnica — CV Online",
+  tagline:"Onde a profundidade técnica encontra a clareza comercial",
+  role:"Marketing de Produto <span class='sep'>|</span> Marketing Técnico de Produto <span class='sep'>|</span> Redação Técnica e Documentação <span class='sep'>|</span> Indústria B2B, Engenharia e Cleantech",
+  ui:{dark:"Escuro", light:"Claro", print:"Imprimir"},
+  h:{strengths:"Pontos Fortes", edu:"Formação", certs:"Certificações", langs:"Línguas", beyond:"Fora do Trabalho", profile:"Perfil", exp:"Experiência Profissional", skills:"Competências Principais"},
+  wins:[
+    ["Engenheiro que faz marketing","Faz a ponte entre engenharia e comercial como marketeer técnico de produto"],
+    ["Tradutor técnico-comercial","Transforma especificações de engenharia em posicionamento em que equipas técnicas e distribuidores confiam"],
+    ["Documentação desde a base","Construiu manuais de fábrica, procedimentos e cartas de controlo como um dos primeiros colaboradores"],
+    ["2x velocidade de desenvolvimento","Aplicou métodos de processo fabril ao processo de desenvolvimento de produto na Lumatek"],
+    ["Catálogos EN / ES / DE","Portefólio completo de LED e controladores, do briefing técnico à impressão em cerca de 3 dias"],
+    ["Automação e PLCs","Experiência prática com sistemas Omron e Siemens em ambientes de produção contínua"],
+    ["Formação em SolidWorks e Solid Edge","Certificação SolidWorks Mechanical Design – Associate, com formação e experiência académica de modelação em SolidWorks e Solid Edge"],
+    ["Central de 16 MW, zero acidentes","8 anos de liderança de turno 24/7 a cerca de 350 t/dia, com registo de zero acidentes com baixa"],
+    ["Painéis de dados","Python, SQL e Power BI aplicados à tomada de decisão"],
+    ["Especialização em SEO","UC Davis; mais formação da Google em marketing digital e redação técnica"],
+    ["Multilingue","Português, inglês, espanhol"]
+  ],
+  profile:[
+    "Engenheiro e marketeer técnico de produto que transforma produtos tecnicamente exigentes em valor comercial claro para compradores B2B técnicos. Mais de 15 anos em operações industriais, energia e marketing de produto, entre fotovoltaico, produção alimentar, geração de energia a partir de biomassa e iluminação hortícola. Na Lumatek, converte especificações de engenharia de um portefólio completo de LED e controladores em <b>fichas técnicas, catálogos e posicionamento</b> em que distribuidores e equipas internas confiam, em inglês, espanhol e alemão.",
+    "Base de engenharia com licenciatura em Engenharia Eletromecânica e mestrado (nível) em Engenharia e Gestão Industrial, alicerçada em oito anos de liderança de operações 24 horas por dia, 7 dias por semana, incluindo a construção de manuais técnicos, procedimentos e cartas de controlo desde a base como um dos primeiros colaboradores, e a resolução de avarias em sistemas de automação assentes em controladores Omron e Siemens. Essa fluência com equipas de engenharia e documentação técnica é complementada por <b>formação recente em marketing de produto, redação técnica e SEO</b> (Especialização da UC Davis), além de à-vontade com dados (Python, SQL e Power BI) que sustenta decisões de posicionamento e conteúdo baseadas em evidência.",
+    "Confortável no papel de tradutor entre engenharia e comercial: transforma especificações, fluxos de trabalho e detalhe técnico em conteúdo e posicionamento em que engenheiros, equipas de produto e distribuidores confiam e sobre os quais agem. Baseado na Covilhã, Portugal; aberto a funções remotas ou híbridas e a colaboração internacional."
+  ],
+  jobs:[
+    {title:"Gestor de Marketing de Produto", co:"Lumatek", meta:"Jan 2026 – Presente · Remoto",
+     desc:"Marketing de produto e conteúdo técnico orientados pela engenharia, para iluminação hortícola em mercados B2B internacionais.",
+     b:["Coproduziu conteúdo técnico e comercial para o <b>portefólio completo de LED e controladores</b> nos catálogos profissional e de retalho de 2026, estruturado em <b>inglês, espanhol e alemão</b> para cultivadores amadores e profissionais em toda a Lumatek Europa.",
+        "Atuou como <b>assistente chave do desenvolvimento de produto</b>, aplicando métodos de processo fabril e industrial ao processo de desenvolvimento de produto (PDP) e <b>ajudando a duplicar a sua velocidade</b>.",
+        "Elaborou <b>fichas técnicas e manuais</b> para novos produtos de iluminação hortícola confidenciais e apoiou lançamentos com análise de mercado e concorrência e posicionamento de preço.",
+        "Concluiu cada catálogo em <b>cerca de três dias</b>, do briefing técnico até pronto para impressão, equilibrando rigor técnico com mensagens comerciais claras.",
+        "Atuou como <b>tradutor técnico-comercial</b>, convertendo especificações de engenharia em posicionamento que deu a distribuidores e equipas internas uma visão mais clara do portefólio e decisões de go-to-market mais confiantes.",
+        "Reduziu os pedidos pontuais de conteúdo à equipa de engenharia; o conteúdo produzido permanece publicado no site da empresa."]},
+    {title:"Chefe de Turno Sénior, Central de Biomassa", co:"Magestop", meta:"Out 2018 – Jan 2026 · Portugal",
+     desc:"Liderança de turno numa central de biomassa sólida de 16 MW, cerca de 350 t/dia, a operar 24 horas por dia, 7 dias por semana.",
+     b:["Liderou uma <b>equipa de turno de cinco</b> operadores e técnicos e coordenou com <b>cerca de 35 colegas</b> das áreas de manutenção, engenharia e funções técnicas; assumiu decisões de turno durante incidentes e anomalias.",
+        "Como um dos primeiros colaboradores, <b>construiu manuais técnicos, procedimentos operacionais, checklists e cartas de controlo desde a base</b>, permitindo às equipas monitorizar a caldeira (49 MWt), a turbina (17 MW) e os sistemas de produção e manter os custos sob controlo.",
+        "Manteve a produção máxima de energia (16 MW por hora) melhorando a qualidade da biomassa e a eficiência de combustão e reduzindo o custo de biomassa por turno.",
+        "Planeou e executou a paragem anual de manutenção preventiva da central, com cerca de 30 dias de duração.",
+        "Manteve um <b>registo de zero acidentes com baixa ao longo de oito anos</b> num ambiente crítico para a fiabilidade."]},
+    {title:"Técnico Industrial", co:"Frulact", meta:"Dez 2014 – Out 2018 · Portugal",
+     desc:"Manutenção e melhoria contínua numa operação de produção alimentar contínua.",
+     b:["Assegurou a manutenção de linhas de produção contínuas, linhas de vapor, automação, <b>PLCs Omron e Siemens</b>, sensores, motores e sistemas HMI, resolvendo avarias de forma autónoma para manter as linhas a funcionar com fiabilidade.",
+        "Documentou a manutenção de forma rigorosa, <b>reduzindo o tempo de diagnóstico e as paragens não planeadas</b>, com a maioria das tarefas concluídas sem recurso a especialistas externos.",
+        "Assegurou o manuseamento e a reciclagem adequados de componentes, produtos e líquidos em conformidade com as normas <b>ISO 9001, ISO 22000 e ISO 14001</b>."]},
+    {title:"Técnico Especialista, Fotovoltaico", co:"Martifer Renewables", meta:"Abr 2008 – Abr 2010 · Bélgica e Espanha",
+     desc:"Execução de projetos fotovoltaicos de grande escala em várias localizações internacionais.",
+     b:["Executou <b>cerca de 15 projetos fotovoltaicos em Espanha e mais de 20 na Bélgica</b>: interpretação de esquemas elétricos e de montagem, instalação de estruturas de suporte e painéis, e cablagem de painéis e inversores até à conclusão.",
+        "Liderou e coordenou a equipa no terreno <b>como gestor de obra em três projetos</b> na Bélgica."]}
+  ],
+  skillGroups:[
+    {title:"Marketing e Produto", primary:true, chips:["Marketing Técnico de Produto","Posicionamento de Produto","Propostas de Valor","Catálogos, Fichas Técnicas e Manuais","Redação Técnica","Capacitação Comercial","Análise de Concorrência e Mercado","Posicionamento de Preço","Marketing Digital","SEO"]},
+    {title:"Engenharia e Sistemas", chips:["Engenharia Eletromecânica","Mecatrónica","SolidWorks","Automação e PLCs (Omron, Siemens)","Esquemas Técnicos e Documentação","Fotovoltaico","Geração de Energia (Biomassa)","Estratégia de Manutenção","Fiabilidade e Análise de Causa Raiz","Segurança (Zero Acidentes com Baixa)","ISO 9001 / 22000 / 14001"]},
+    {title:"Dados, IA e Ferramentas", chips:["Python","SQL","Power BI","Automação de Processos","SCADA / DCS","WordPress","HubSpot","SEMrush","Adobe Lightroom","ChatGPT","Perplexity","Claude","Asana","Microsoft 365"]}
+  ],
+  edu:[
+    {title:"Mestrado em Engenharia e Gestão Industrial", desc:"Parte curricular concluída; tese em pausa (foco em aprendizagem automática / apoio à decisão). Universidade da Beira Interior (2021–2023)"},
+    {title:"Licenciatura em Engenharia Eletromecânica", desc:"Concluída em regime pós-laboral, a par de trabalho a tempo inteiro. Universidade da Beira Interior (2012–2021)"}
+  ],
+  certs:[
+    "Especialização em SEO, University of California, Davis (2026)",
+    "Foundations of Digital Marketing &amp; E-commerce, Google (2026)",
+    "Introdução à Redação Técnica, Board Infinity (2026)",
+    "SolidWorks Mechanical Design – Associate",
+    "Python (Avançado, Limpeza de Dados), SQL, Power BI (Storytelling de Dados), Automação de Processos Empresariais (2025)",
+    "WordPress; Adobe Lightroom; Fundamentos de Linux e Cibersegurança",
+    "Em curso: Marketing de Produto, SEO avançado (AEO, GEO), Redação Técnica"
+  ],
+  langs:[{name:"Português", level:"Nativo"},{name:"Inglês", level:"Profissional (91/100)"},{name:"Espanhol", level:"Intermédio (profissional)"}],
+  beyond:"Presidente, NEUBI — Núcleo de Estudantes de Engenharia Eletromecânica (4 anos) · Vice-Presidente, AJAS — Associação de Jovens de Ação Solidária (2 anos) · Jogador federado de râguebi universitário (6 anos) · Árbitro profissional de futebol (10 anos)",
+  foot:"Rui Inácio · Marketing de Produto e Redação Técnica · <a href=\"mailto:rui.e.inacio@gmail.com\">rui.e.inacio@gmail.com</a> · +351 965 884 572 · Atualizado em agosto de 2026"
+};
+
+CV.es = {
+  docTitle:"Rui Inácio · Marketing Técnico de Producto y Redacción Técnica — CV Online",
+  tagline:"Donde la profundidad técnica se encuentra con la claridad comercial",
+  role:"Marketing de Producto <span class='sep'>|</span> Marketing Técnico de Producto <span class='sep'>|</span> Redacción Técnica y Documentación <span class='sep'>|</span> Industria B2B, Ingeniería y Cleantech",
+  ui:{dark:"Oscuro", light:"Claro", print:"Imprimir"},
+  h:{strengths:"Puntos Fuertes", edu:"Formación", certs:"Certificaciones", langs:"Idiomas", beyond:"Fuera del Trabajo", profile:"Perfil", exp:"Experiencia Profesional", skills:"Competencias Clave"},
+  wins:[
+    ["Ingeniero que hace marketing","Conecta ingeniería y área comercial como marketer técnico de producto"],
+    ["Traductor técnico-comercial","Convierte especificaciones de ingeniería en posicionamiento en el que confían los equipos técnicos y los distribuidores"],
+    ["Documentación desde cero","Construyó manuales de planta, procedimientos y cartas de control como uno de los primeros empleados"],
+    ["2x velocidad de desarrollo","Aplicó métodos de proceso de fábrica al proceso de desarrollo de producto en Lumatek"],
+    ["Catálogos EN / ES / DE","Portafolio completo de LED y controladores, del brief técnico a imprenta en unos 3 días"],
+    ["Automatización y PLCs","Experiencia práctica con sistemas Omron y Siemens en entornos de producción continua"],
+    ["Formación en SolidWorks y Solid Edge","Certificación SolidWorks Mechanical Design – Associate, con formación y experiencia académica de modelado en SolidWorks y Solid Edge"],
+    ["Planta de 16 MW, cero accidentes","8 años de liderazgo de turno 24/7 a unas 350 t/día, con un historial de cero accidentes con baja"],
+    ["Paneles de datos","Python, SQL y Power BI aplicados a la toma de decisiones"],
+    ["Especialización en SEO","UC Davis; más formación de Google en marketing digital y redacción técnica"],
+    ["Multilingüe","Portugués, inglés, español"]
+  ],
+  profile:[
+    "Ingeniero y marketer técnico de producto que convierte productos técnicamente exigentes en valor comercial claro para compradores B2B técnicos. Más de 15 años en operaciones industriales, energía y marketing de producto, entre fotovoltaica, fabricación de alimentos, generación de energía con biomasa e iluminación hortícola. En Lumatek, convierte especificaciones de ingeniería de un portafolio completo de LED y controladores en <b>fichas técnicas, catálogos y posicionamiento</b> en los que confían distribuidores y equipos internos, en inglés, español y alemán.",
+    "Base de ingeniería con grado en Ingeniería Electromecánica y máster (nivel) en Ingeniería y Gestión Industrial, asentada en ocho años de liderazgo de operaciones 24 horas al día, los 7 días de la semana, incluyendo la construcción de manuales técnicos, procedimientos y cartas de control desde cero como uno de los primeros empleados, y la resolución de averías en sistemas de automatización basados en controladores Omron y Siemens. Esa fluidez con equipos de ingeniería y documentación técnica se combina con <b>formación reciente en marketing de producto, redacción técnica y SEO</b> (Especialización de UC Davis), además de soltura con datos (Python, SQL y Power BI) que respalda decisiones de posicionamiento y contenido basadas en evidencia.",
+    "Cómodo en el papel de traductor entre ingeniería y área comercial: convierte especificaciones, flujos de trabajo y detalle técnico en contenido y posicionamiento en los que confían y sobre los que actúan ingenieros, equipos de producto y distribuidores. Con base en Covilhã, Portugal; abierto a puestos remotos o híbridos y a colaboración internacional."
+  ],
+  jobs:[
+    {title:"Gerente de Marketing de Producto", co:"Lumatek", meta:"Ene 2026 – Presente · Remoto",
+     desc:"Marketing de producto y contenido técnico liderados por ingeniería, para iluminación hortícola en mercados B2B internacionales.",
+     b:["Coprodujo contenido técnico y comercial para el <b>portafolio completo de LED y controladores</b> en los catálogos profesional y minorista de 2026, estructurado en <b>inglés, español y alemán</b> para cultivadores aficionados y profesionales en toda Lumatek Europa.",
+        "Actuó como <b>asistente clave del desarrollo de producto</b>, aplicando métodos de proceso de fábrica e industrial al proceso de desarrollo de producto (PDP) y <b>ayudando a duplicar su velocidad</b>.",
+        "Redactó <b>fichas técnicas y manuales</b> para nuevos productos de iluminación hortícola confidenciales y respaldó lanzamientos con análisis de mercado y competencia y posicionamiento de precio.",
+        "Completó cada catálogo en <b>unos tres días</b>, desde el brief técnico hasta listo para imprenta, equilibrando precisión técnica con mensajes comerciales claros.",
+        "Actuó como <b>traductor técnico-comercial</b>, convirtiendo especificaciones de ingeniería en posicionamiento que dio a distribuidores y equipos internos una visión más clara del portafolio y decisiones de salida al mercado más seguras.",
+        "Redujo las solicitudes puntuales de contenido al equipo de ingeniería; el contenido producido sigue publicado en el sitio web de la empresa."]},
+    {title:"Líder de Turno Sénior, Planta de Biomasa", co:"Magestop", meta:"Oct 2018 – Ene 2026 · Portugal",
+     desc:"Liderazgo de turno en una planta de biomasa sólida de 16 MW, unas 350 t/día, operando 24/7 todo el año.",
+     b:["Lideró un <b>equipo de turno de cinco</b> operadores y técnicos y coordinó con <b>unos 35 compañeros</b> de mantenimiento, ingeniería y funciones técnicas; asumió decisiones de turno durante incidentes y anomalías.",
+        "Como uno de los primeros empleados, <b>construyó manuales técnicos, procedimientos operativos, listas de verificación y cartas de control desde cero</b>, permitiendo a los equipos monitorizar la caldera (49 MWt), la turbina (17 MW) y los sistemas de producción y mantener los costes bajo control.",
+        "Mantuvo la producción máxima de energía (16 MW por hora) mejorando la calidad de la biomasa y la eficiencia de combustión y reduciendo el coste de biomasa por turno.",
+        "Planificó y ejecutó la parada anual de mantenimiento preventivo de la planta, de unos 30 días de duración.",
+        "Mantuvo un <b>historial de cero accidentes con baja durante ocho años</b> en un entorno crítico para la fiabilidad."]},
+    {title:"Técnico Industrial", co:"Frulact", meta:"Dic 2014 – Oct 2018 · Portugal",
+     desc:"Mantenimiento y mejora continua en una operación de fabricación de alimentos continua.",
+     b:["Mantuvo líneas de producción continuas, líneas de vapor, automatización, <b>PLCs Omron y Siemens</b>, sensores, motores y sistemas HMI, solucionando averías de forma autónoma para mantener las líneas funcionando con fiabilidad.",
+        "Documentó el mantenimiento de forma rigurosa, <b>reduciendo el tiempo de diagnóstico y las paradas no planificadas</b>, con la mayoría de las tareas completadas sin recurrir a especialistas externos.",
+        "Aseguró el manejo y reciclaje adecuados de componentes, productos y líquidos conforme a las normas <b>ISO 9001, ISO 22000 e ISO 14001</b>."]},
+    {title:"Técnico Especialista, Fotovoltaica", co:"Martifer Renewables", meta:"Abr 2008 – Abr 2010 · Bélgica y España",
+     desc:"Ejecución de proyectos fotovoltaicos a gran escala en varios emplazamientos internacionales.",
+     b:["Ejecutó <b>unos 15 proyectos fotovoltaicos en España y más de 20 en Bélgica</b>: interpretación de esquemas eléctricos y de montaje, instalación de estructuras de soporte y paneles, y cableado de paneles e inversores hasta su finalización.",
+        "Lideró y coordinó el equipo en obra <b>como jefe de obra en tres proyectos</b> en Bélgica."]}
+  ],
+  skillGroups:[
+    {title:"Marketing y Producto", primary:true, chips:["Marketing Técnico de Producto","Posicionamiento de Producto","Propuestas de Valor","Catálogos, Fichas Técnicas y Manuales","Redacción Técnica","Habilitación de Ventas","Análisis de Competencia y Mercado","Posicionamiento de Precio","Marketing Digital","SEO"]},
+    {title:"Ingeniería y Sistemas", chips:["Ingeniería Electromecánica","Mecatrónica","SolidWorks","Automatización y PLCs (Omron, Siemens)","Esquemas Técnicos y Documentación","Fotovoltaica","Generación de Energía (Biomasa)","Estrategia de Mantenimiento","Fiabilidad y Análisis de Causa Raíz","Seguridad (Cero Accidentes con Baja)","ISO 9001 / 22000 / 14001"]},
+    {title:"Datos, IA y Herramientas", chips:["Python","SQL","Power BI","Automatización de Procesos","SCADA / DCS","WordPress","HubSpot","SEMrush","Adobe Lightroom","ChatGPT","Perplexity","Claude","Asana","Microsoft 365"]}
+  ],
+  edu:[
+    {title:"Máster en Ingeniería y Gestión Industrial", desc:"Parte lectiva completada; tesis en pausa (enfoque en aprendizaje automático / apoyo a la decisión). Universidade da Beira Interior (2021–2023)"},
+    {title:"Grado en Ingeniería Electromecánica", desc:"Completado a tiempo parcial mientras trabajaba a tiempo completo. Universidade da Beira Interior (2012–2021)"}
+  ],
+  certs:[
+    "Especialización en SEO, University of California, Davis (2026)",
+    "Foundations of Digital Marketing &amp; E-commerce, Google (2026)",
+    "Introducción a la Redacción Técnica, Board Infinity (2026)",
+    "SolidWorks Mechanical Design – Associate",
+    "Python (Avanzado, Limpieza de Datos), SQL, Power BI (Storytelling de Datos), Automatización de Procesos Empresariales (2025)",
+    "WordPress; Adobe Lightroom; Fundamentos de Linux y Ciberseguridad",
+    "En curso: Marketing de Producto, SEO avanzado (AEO, GEO), Redacción Técnica"
+  ],
+  langs:[{name:"Portugués", level:"Nativo"},{name:"Inglés", level:"Profesional (91/100)"},{name:"Español", level:"Intermedio (profesional)"}],
+  beyond:"Presidente, NEUBI — Asociación de Estudiantes de Ingeniería Electromecánica (4 años) · Vicepresidente, AJAS — Asociación Juvenil de Acción Solidaria (2 años) · Jugador federado de rugby universitario (6 años) · Árbitro profesional de fútbol (10 años)",
+  foot:"Rui Inácio · Marketing de Producto y Redacción Técnica · <a href=\"mailto:rui.e.inacio@gmail.com\">rui.e.inacio@gmail.com</a> · +351 965 884 572 · Actualizado en agosto de 2026"
+};
+
+CV.fr = {
+  docTitle:"Rui Inácio · Marketing Produit Technique et Rédaction Technique — CV en Ligne",
+  tagline:"Là où la profondeur technique rencontre la clarté commerciale",
+  role:"Marketing Produit <span class='sep'>|</span> Marketing Produit Technique <span class='sep'>|</span> Rédaction Technique et Documentation <span class='sep'>|</span> Industrie B2B, Ingénierie et Cleantech",
+  ui:{dark:"Sombre", light:"Clair", print:"Imprimer"},
+  h:{strengths:"Points Forts", edu:"Formation", certs:"Certifications", langs:"Langues", beyond:"En Dehors du Travail", profile:"Profil", exp:"Expérience Professionnelle", skills:"Compétences Clés"},
+  wins:[
+    ["Un ingénieur qui fait du marketing","Fait le lien entre ingénierie et commercial en tant que marketeur produit technique"],
+    ["Traducteur technico-commercial","Transforme des spécifications techniques en positionnement auquel les équipes techniques et les distributeurs font confiance"],
+    ["Documentation construite depuis la base","A conçu des manuels d'usine, des procédures et des cartes de contrôle en tant que l'un des premiers employés"],
+    ["Vitesse de développement doublée","A appliqué des méthodes de process industriel au processus de développement produit chez Lumatek"],
+    ["Catalogues EN / ES / DE","Gamme complète de LED et de contrôleurs, du brief technique à l'impression en environ 3 jours"],
+    ["Automatisation et automates","Expérience pratique des systèmes Omron et Siemens en environnement de production continue"],
+    ["Formation SolidWorks et Solid Edge","Certifié SolidWorks Mechanical Design – Associate, avec une formation et une expérience académique de modélisation sur SolidWorks et Solid Edge"],
+    ["Centrale de 16 MW, zéro accident","8 ans de gestion d'équipe en 24/7 pour environ 350 t/jour, avec un bilan de zéro accident avec arrêt de travail"],
+    ["Tableaux de bord de données","Python, SQL et Power BI appliqués à la prise de décision"],
+    ["Spécialisation SEO","UC Davis ; ainsi qu'une formation Google en marketing digital et rédaction technique"],
+    ["Multilingue","Portugais, anglais, espagnol"]
+  ],
+  profile:[
+    "Ingénieur et marketeur produit technique qui transforme des produits techniquement exigeants en valeur commerciale claire pour des acheteurs B2B techniques. Plus de 15 ans dans les opérations industrielles, l'énergie et le marketing produit, entre le photovoltaïque, la fabrication alimentaire, la production d'énergie à partir de biomasse et l'éclairage horticole. Chez Lumatek, il transforme les spécifications techniques d'une gamme complète de LED et de contrôleurs en <b>fiches techniques, catalogues et positionnement</b> auxquels distributeurs et équipes internes font confiance, en anglais, espagnol et allemand.",
+    "Formation d'ingénieur avec une licence en génie électromécanique et un master (niveau) en génie industriel et management, appuyée sur huit années de management d'exploitation 24 heures sur 24 et 7 jours sur 7, incluant la création de manuels techniques, de procédures et de cartes de contrôle depuis la base en tant que l'un des premiers employés, et le dépannage de systèmes d'automatisation reposant sur des automates Omron et Siemens. Cette aisance avec les équipes d'ingénierie et la documentation technique s'accompagne d'une <b>formation récente en marketing produit, rédaction technique et SEO</b> (spécialisation UC Davis), ainsi que d'une bonne maîtrise des données (Python, SQL et Power BI) qui appuie des décisions de positionnement et de contenu fondées sur des faits.",
+    "À l'aise dans le rôle de traducteur entre ingénierie et commercial : il transforme spécifications, processus et détails techniques en contenu et en positionnement auxquels ingénieurs, équipes produit et distributeurs font confiance et sur lesquels ils s'appuient. Basé à Covilhã, au Portugal ; ouvert à des postes à distance ou hybrides et à une collaboration internationale."
+  ],
+  jobs:[
+    {title:"Responsable Marketing Produit", co:"Lumatek", meta:"Janv. 2026 – Présent · Télétravail",
+     desc:"Marketing produit et contenu technique pilotés par l'ingénierie, pour l'éclairage horticole sur des marchés B2B internationaux.",
+     b:["A coproduit du contenu technique et commercial pour <b>l'ensemble de la gamme de LED et de contrôleurs</b> des catalogues professionnel et grand public 2026, structuré en <b>anglais, espagnol et allemand</b> pour les cultivateurs amateurs et professionnels dans toute l'Europe chez Lumatek.",
+        "A agi en tant qu'<b>assistant clé du développement produit</b>, en appliquant des méthodes de process industriel au processus de développement produit (PDP) et en <b>aidant à en doubler la vitesse</b>.",
+        "A rédigé des <b>fiches techniques et des manuels</b> pour de nouveaux produits d'éclairage horticole confidentiels et a soutenu les lancements par des analyses de marché et de la concurrence ainsi que le positionnement tarifaire.",
+        "A bouclé chaque catalogue en <b>environ trois jours</b>, du brief technique jusqu'au prêt à imprimer, en conciliant rigueur technique et message commercial clair.",
+        "A joué le rôle de <b>traducteur technico-commercial</b>, convertissant les spécifications techniques en positionnement donnant aux distributeurs et aux équipes internes une vision plus claire de la gamme et des décisions de mise sur le marché plus assurées.",
+        "A réduit les demandes ponctuelles de contenu adressées à l'équipe d'ingénierie ; le contenu produit reste en ligne sur le site de l'entreprise."]},
+    {title:"Chef d'Équipe Senior, Centrale Biomasse", co:"Magestop", meta:"Oct. 2018 – Janv. 2026 · Portugal",
+     desc:"Management d'équipe dans une centrale biomasse solide de 16 MW, environ 350 t/jour, fonctionnant 24 h/24 et 7 j/7.",
+     b:["A dirigé une <b>équipe de cinq</b> opérateurs et techniciens et coordonné avec <b>environ 35 collègues</b> des fonctions maintenance, ingénierie et technique ; a pris les décisions d'équipe lors d'incidents et d'anomalies.",
+        "En tant que l'un des premiers employés, <b>a conçu manuels techniques, procédures opérationnelles, check-lists et cartes de contrôle depuis la base</b>, permettant aux équipes de surveiller la chaudière (49 MWt), la turbine (17 MW) et les systèmes de production, et de maîtriser les coûts.",
+        "A maintenu une production d'énergie maximale (16 MW par heure) en améliorant la qualité de la biomasse et l'efficacité de combustion et en réduisant le coût de biomasse par équipe.",
+        "A planifié et mené l'arrêt annuel de maintenance préventive de la centrale, d'une durée d'environ 30 jours.",
+        "A maintenu un <b>bilan de zéro accident avec arrêt de travail sur huit ans</b> dans un environnement critique pour la fiabilité."]},
+    {title:"Technicien Industriel", co:"Frulact", meta:"Déc. 2014 – Oct. 2018 · Portugal",
+     desc:"Maintenance et amélioration continue au sein d'une production alimentaire en continu.",
+     b:["A assuré la maintenance des lignes de production continues, des lignes vapeur, de l'automatisation, des <b>automates Omron et Siemens</b>, des capteurs, moteurs et systèmes IHM, en dépannant de manière autonome pour maintenir la fiabilité des lignes.",
+        "A documenté la maintenance de façon rigoureuse, <b>réduisant le temps de diagnostic et les arrêts non planifiés</b>, la plupart des tâches étant réalisées sans recours à des spécialistes externes.",
+        "A garanti la bonne gestion et le recyclage des composants, produits et liquides conformément aux normes <b>ISO 9001, ISO 22000 et ISO 14001</b>."]},
+    {title:"Technicien Spécialiste, Photovoltaïque", co:"Martifer Renewables", meta:"Avr. 2008 – Avr. 2010 · Belgique et Espagne",
+     desc:"Réalisation de projets photovoltaïques de grande envergure sur plusieurs sites internationaux.",
+     b:["A réalisé <b>environ 15 projets photovoltaïques en Espagne et plus de 20 en Belgique</b> : interprétation de schémas électriques et de montage, installation de structures porteuses et de panneaux, et câblage des panneaux et onduleurs jusqu'à leur mise en service.",
+        "A dirigé et coordonné l'équipe sur site <b>en tant que chef de chantier sur trois projets</b> en Belgique."]}
+  ],
+  skillGroups:[
+    {title:"Marketing et Produit", primary:true, chips:["Marketing Produit Technique","Positionnement Produit","Propositions de Valeur","Catalogues, Fiches Techniques et Manuels","Rédaction Technique","Aide à la Vente","Analyse Concurrentielle et de Marché","Positionnement Tarifaire","Marketing Digital","SEO"]},
+    {title:"Ingénierie et Systèmes", chips:["Génie Électromécanique","Mécatronique","SolidWorks","Automatisation et Automates (Omron, Siemens)","Schémas Techniques et Documentation","Photovoltaïque","Production d'Énergie (Biomasse)","Stratégie de Maintenance","Fiabilité et Analyse des Causes Racines","Sécurité (Zéro Accident avec Arrêt)","ISO 9001 / 22000 / 14001"]},
+    {title:"Données, IA et Outils", chips:["Python","SQL","Power BI","Automatisation des Processus","SCADA / DCS","WordPress","HubSpot","SEMrush","Adobe Lightroom","ChatGPT","Perplexity","Claude","Asana","Microsoft 365"]}
+  ],
+  edu:[
+    {title:"Master en Génie Industriel et Management", desc:"Partie cours terminée ; mémoire en pause (axé apprentissage automatique / aide à la décision). Universidade da Beira Interior (2021–2023)"},
+    {title:"Licence en Génie Électromécanique", desc:"Réalisée à temps partiel en parallèle d'un emploi à temps plein. Universidade da Beira Interior (2012–2021)"}
+  ],
+  certs:[
+    "Spécialisation SEO, University of California, Davis (2026)",
+    "Foundations of Digital Marketing &amp; E-commerce, Google (2026)",
+    "Introduction à la rédaction technique, Board Infinity (2026)",
+    "SolidWorks Mechanical Design – Associate",
+    "Python (avancé, nettoyage de données), SQL, Power BI (storytelling de données), automatisation des processus d'entreprise (2025)",
+    "WordPress ; Adobe Lightroom ; fondamentaux Linux et cybersécurité",
+    "En cours : marketing produit, SEO avancé (AEO, GEO), rédaction technique"
+  ],
+  langs:[{name:"Portugais", level:"Langue maternelle"},{name:"Anglais", level:"Professionnel (91/100)"},{name:"Espagnol", level:"Intermédiaire (professionnel)"}],
+  beyond:"Président, NEUBI — Association des étudiants en génie électromécanique (4 ans) · Vice-président, AJAS — Association de jeunesse pour l'action solidaire (2 ans) · Joueur de rugby universitaire fédéré (6 ans) · Arbitre de football professionnel (10 ans)",
+  foot:"Rui Inácio · Marketing Produit et Rédaction Technique · <a href=\"mailto:rui.e.inacio@gmail.com\">rui.e.inacio@gmail.com</a> · +351 965 884 572 · Mis à jour en août 2026"
+};
+
+let currentLang = 'en';
+let currentTheme = 'light';
+
+function buildWins(wins){ return wins.map(w => `<div class="win"><b>${w[0]}</b><span>${w[1]}</span></div>`).join(''); }
+function buildEdu(edu){ return edu.map(e => `<div class="edu"><b>${e.title}</b><span>${e.desc}</span></div>`).join(''); }
+function buildCerts(certs){ return certs.map(c => `<li>${c}</li>`).join(''); }
+function buildLangs(langs){ return langs.map(l => `<div class="lang"><b>${l.name}</b><span>${l.level}</span></div>`).join(''); }
+function buildJobs(jobs){
+  return jobs.map(j => `<div class="job"><div class="top"><span class="title">${j.title} <span class="co">· ${j.co}</span></span><span class="meta">${j.meta}</span></div><div class="desc">${j.desc}</div><ul>${j.b.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+}
+function buildSkills(groups){
+  return groups.map(g => `<div class="skillgroup${g.primary?' primary':''}"><h3>${g.title}</h3><div class="chips">${g.chips.map(c=>`<span>${c}</span>`).join('')}</div></div>`).join('');
+}
+
+function updateThemeLabel(){
+  const d = CV[currentLang];
+  document.getElementById('themeLabel').textContent = currentTheme === 'dark' ? d.ui.light : d.ui.dark;
+  document.getElementById('themeBtn').setAttribute('aria-pressed', currentTheme === 'dark' ? 'true' : 'false');
+}
+
+function render(lang){
+  const d = CV[lang];
+  currentLang = lang;
+  document.title = d.docTitle;
+  document.documentElement.lang = lang;
+  document.getElementById('tagline').textContent = d.tagline;
+  document.getElementById('roleline').innerHTML = d.role;
+  document.getElementById('h-strengths').textContent = d.h.strengths;
+  document.getElementById('h-edu').textContent = d.h.edu;
+  document.getElementById('h-certs').textContent = d.h.certs;
+  document.getElementById('h-langs').textContent = d.h.langs;
+  document.getElementById('h-beyond').textContent = d.h.beyond;
+  document.getElementById('h-profile').textContent = d.h.profile;
+  document.getElementById('h-exp').textContent = d.h.exp;
+  document.getElementById('h-skills').textContent = d.h.skills;
+  document.getElementById('wins').innerHTML = buildWins(d.wins);
+  document.getElementById('edu').innerHTML = buildEdu(d.edu);
+  document.getElementById('certs').innerHTML = buildCerts(d.certs);
+  document.getElementById('langlist').innerHTML = buildLangs(d.langs);
+  document.getElementById('beyondtext').textContent = d.beyond;
+  document.getElementById('profile-body').innerHTML = d.profile.map(p=>`<p>${p}</p>`).join('');
+  document.getElementById('jobs').innerHTML = buildJobs(d.jobs);
+  document.getElementById('skills-body').innerHTML = buildSkills(d.skillGroups);
+  document.getElementById('foot').innerHTML = d.foot;
+  document.getElementById('printLabel').textContent = d.ui.print;
+  document.querySelectorAll('#langs button').forEach(function(btn){
+    btn.setAttribute('aria-pressed', btn.getAttribute('data-lang') === lang ? 'true' : 'false');
+  });
+  updateThemeLabel();
+}
+
+document.getElementById('langs').addEventListener('click', function(e){
+  var btn = e.target.closest('button[data-lang]');
+  if(!btn) return;
+  render(btn.getAttribute('data-lang'));
+});
+
+document.getElementById('themeBtn').addEventListener('click', function(){
+  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  if(currentTheme === 'dark'){
+    document.documentElement.setAttribute('data-theme','dark');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+  }
+  updateThemeLabel();
+});
+
+document.getElementById('printBtn').addEventListener('click', function(){
+  window.print();
+});
+
+render('en');
+</script>
+</body>
+</html>
